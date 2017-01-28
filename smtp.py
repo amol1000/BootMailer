@@ -1,3 +1,4 @@
+#Reference from https://pymotw.com/2/smtplib/
 #!/usr/bin/env python
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
