@@ -7,7 +7,7 @@ from email import encoders
 import time
 import os
 import sys
-import cv2
+
 
 
 i=0
@@ -22,9 +22,9 @@ if i>=50:
     print "Check your Connectivity Papi!"
     sys.exit(0)
 
-fromaddr = "kulkarni.amol.13ce1008@gmail.com"
-toaddr = "amol1000.ak@gmail.com"
- 
+fromaddr = ""
+toaddr = ""
+
 msg = MIMEMultipart()
  
 msg['From'] = fromaddr
@@ -37,7 +37,7 @@ body = "PC Has been started ::"+localtime
 msg.attach(MIMEText(body, 'plain'))
  
 filename = "test.png"
-attachment = open("/home/amol/python/test.png", "rb")
+attachment = open("Path to image file", "rb")
  
 part = MIMEBase('application', 'octet-stream')
 part.set_payload((attachment).read())
@@ -48,7 +48,7 @@ msg.attach(part)
  
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(fromaddr, "honda@dio315")
+server.login(fromaddr, "YourPasswordHere")
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
