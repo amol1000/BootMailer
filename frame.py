@@ -1,6 +1,4 @@
-#Thanks to Micka from stackoverflow http://stackoverflow.com/users/2393191/micka
-
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import cv2
 

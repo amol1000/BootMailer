@@ -1,4 +1,3 @@
-#Reference from https://pymotw.com/2/smtplib/
 #!/usr/bin/env python
 import smtplib
 from email.MIMEMultipart import MIMEMultipart
@@ -9,7 +8,7 @@ import time
 import os
 import sys
 
-
+#MIME:MultiPurposeInternetMailExtension
 
 i=0
 netActive=False
@@ -19,14 +18,14 @@ while netActive==False and i<500 :
         netActive=True
     i=i+1
     continue
-if i>=50:
+if i>=500:
     print "Check your Connectivity Papi!"
     sys.exit(0)
 
 fromaddr = ""
 toaddr = ""
 
-msg = MIMEMultipart()
+msg = MIMEMultipart() #IS the base class for mail format
  
 msg['From'] = fromaddr
 msg['To'] = toaddr
@@ -53,3 +52,4 @@ server.login(fromaddr, "YourPasswordHere")
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
+#Reference from https://pymotw.com/2/smtplib/
